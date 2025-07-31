@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scenes",
+  "info": {
+    "singularName": "scene",
+    "pluralName": "scenes",
+    "displayName": "Scene"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image_url": {
+      "type": "string",
+      "required": true
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "scenes"
+    },
+    "map_position": {
+      "type": "component",
+      "component": "shared.vector2",
+      "repeatable": false
+    },
+    "hotspots": {
+      "type": "component",
+      "component": "shared.hotspot",
+      "repeatable": true
+    }
+  }
+}
