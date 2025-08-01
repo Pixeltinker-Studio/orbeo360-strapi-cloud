@@ -1,45 +1,53 @@
 {
-  "kind": "collectionType",
-  "collectionName": "hotspots",
-  "info": {
-    "singularName": "hotspot",
-    "pluralName": "hotspots",
-    "displayName": "Hotspot"
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
-    "uuid": {
-      "type": "string",
-      "unique": true
-    },
-    "alpha": {
-      "type": "decimal",
-      "required": true,
-      "default": 0
-    },
-    "beta": {
-      "type": "decimal",
-      "required": true,
-      "default": 0
-    },
-    "action_type": {
-      "type": "enumeration",
-      "required": true,
-      "enum": [
-        "link_scene",
-        "show_info",
-        "external_link"
-      ]
-    },
-    "action_value": {
-      "type": "string"
-    }
-  }
+	"kind": "collectionType",
+	"collectionName": "hotspots",
+	"info": {
+		"singularName": "hotspot",
+		"pluralName": "hotspots",
+		"displayName": "Hotspot"
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"uuid": {
+			"type": "string",
+			"unique": true
+		},
+		"alpha": {
+			"type": "decimal",
+			"required": true,
+			"default": 0,
+			"args": [
+				6,
+				1
+			]
+		},
+		"beta": {
+			"type": "decimal",
+			"required": true,
+			"default": 0,
+			"args": [
+				6,
+				1
+			]
+		},
+		"action_type": {
+			"type": "enumeration",
+			"required": true,
+			"enum": [
+				"link_scene",
+				"show_info",
+				"external_link"
+			]
+		},
+		"action_value": {
+			"type": "string"
+		}
+	}
 }
