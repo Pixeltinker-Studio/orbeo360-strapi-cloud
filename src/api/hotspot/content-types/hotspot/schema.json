@@ -27,7 +27,7 @@
 				"defaultTo": 0,
 				"type": "decimal",
 				"args": [
-					2,
+					3,
 					16
 				]
 			}
@@ -40,7 +40,7 @@
 				"defaultTo": 0,
 				"type": "decimal",
 				"args": [
-					2,
+					3,
 					16
 				]
 			}
