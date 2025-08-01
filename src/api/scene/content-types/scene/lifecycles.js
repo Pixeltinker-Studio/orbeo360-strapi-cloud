@@ -7,26 +7,26 @@ module.exports = {
       event.params.data.uuid = uuidv4();
     }
 
-    // Hotspots durchgehen und UUID vergeben
-    if (event.params.data.hotspots) {
+    // Hotspots durchgehen und UUID setzen
+    if (Array.isArray(event.params.data.hotspots)) {
       event.params.data.hotspots = event.params.data.hotspots.map(h => ({
         ...h,
-        uuid: h.uuid || uuidv4()
+        uuid: h.uuid || uuidv4(),
       }));
     }
   },
 
   async beforeUpdate(event) {
-    // Szene UUID sichern
+    // Szene selbst absichern
     if (!event.params.data.uuid) {
       event.params.data.uuid = uuidv4();
     }
 
-    // Hotspots UUIDs ergänzen
-    if (event.params.data.hotspots) {
+    // Hotspots absichern (auch bei Updates)
+    if (Array.isArray(event.params.data.hotspots)) {
       event.params.data.hotspots = event.params.data.hotspots.map(h => ({
         ...h,
-        uuid: h.uuid || uuidv4()
+        uuid: h.uuid || uuidv4(),
       }));
     }
   },
