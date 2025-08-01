@@ -23,19 +23,27 @@
 			"type": "decimal",
 			"required": true,
 			"default": 0,
-			"args": [
-				10,
-				3
-			]
+			"column": {
+				"defaultTo": 0,
+				"type": "decimal",
+				"args": [
+					6,
+					1
+				]
+			}
 		},
 		"beta": {
 			"type": "decimal",
 			"required": true,
 			"default": 0,
-			"args": [
-				10,
-				3
-			]
+			"column": {
+				"defaultTo": 0,
+				"type": "decimal",
+				"args": [
+					6,
+					1
+				]
+			}
 		},
 		"action_type": {
 			"type": "enumeration",
