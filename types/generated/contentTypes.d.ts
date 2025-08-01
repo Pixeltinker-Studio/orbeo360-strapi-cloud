@@ -538,6 +538,46 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHotspotHotspot extends Struct.CollectionTypeSchema {
+  collectionName: 'hotspots';
+  info: {
+    displayName: 'Hotspot';
+    pluralName: 'hotspots';
+    singularName: 'hotspot';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    action_type: Schema.Attribute.Enumeration<
+      ['link_scene', 'show_info', 'external_link']
+    > &
+      Schema.Attribute.Required;
+    action_value: Schema.Attribute.String;
+    alpha: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
+    beta: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hotspot.hotspot'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    uuid: Schema.Attribute.String & Schema.Attribute.Unique;
+  };
+}
+
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -585,7 +625,7 @@ export interface ApiSceneScene extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hotspots: Schema.Attribute.Component<'shared.hotspot', true>;
+    hotspots: Schema.Attribute.Relation<'oneToMany', 'api::hotspot.hotspot'>;
     image_url: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::scene.scene'> &
@@ -1115,6 +1155,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::hotspot.hotspot': ApiHotspotHotspot;
       'api::project.project': ApiProjectProject;
       'api::scene.scene': ApiSceneScene;
       'plugin::content-releases.release': PluginContentReleasesRelease;

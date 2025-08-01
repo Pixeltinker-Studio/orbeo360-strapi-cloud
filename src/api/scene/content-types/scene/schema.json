@@ -35,9 +35,9 @@
       "repeatable": false
     },
     "hotspots": {
-      "type": "component",
-      "component": "shared.hotspot",
-      "repeatable": true
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hotspot.hotspot"
     }
   }
 }
