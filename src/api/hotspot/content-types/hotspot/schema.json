@@ -28,7 +28,7 @@
 				"type": "decimal",
 				"args": [
 					8,
-					8
+					4
 				]
 			}
 		},
@@ -41,7 +41,7 @@
 				"type": "decimal",
 				"args": [
 					8,
-					8
+					4
 				]
 			}
 		},
