@@ -13,6 +13,7 @@ export interface SharedHotspot extends Struct.ComponentSchema {
     alpha: Schema.Attribute.Decimal;
     beta: Schema.Attribute.Decimal;
     name: Schema.Attribute.String;
+    uuid: Schema.Attribute.String & Schema.Attribute.Unique;
   };
 }
 

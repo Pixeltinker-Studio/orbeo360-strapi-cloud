@@ -8,6 +8,10 @@
     "name": {
       "type": "string"
     },
+    "uuid": {
+      "type": "string",
+      "unique": true
+    },
     "alpha": {
       "type": "decimal"
     },
