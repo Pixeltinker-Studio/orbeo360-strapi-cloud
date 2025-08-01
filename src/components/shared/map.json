@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_maps",
+  "info": {
+    "displayName": "Map"
+  },
+  "options": {},
+  "attributes": {
+    "scale": {
+      "type": "decimal"
+    },
+    "offsetX": {
+      "type": "decimal"
+    },
+    "mirrorX": {
+      "type": "boolean"
+    },
+    "mirrorZ": {
+      "type": "boolean"
+    },
+    "offsetY": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}

@@ -1,19 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedHotspot extends Struct.ComponentSchema {
-  collectionName: 'components_shared_hotspots';
+export interface SharedMap extends Struct.ComponentSchema {
+  collectionName: 'components_shared_maps';
   info: {
-    displayName: 'Hotspot';
+    displayName: 'Map';
   };
   attributes: {
-    action_type: Schema.Attribute.Enumeration<
-      ['link_scene', 'show_info', 'external_link']
-    >;
-    action_value: Schema.Attribute.String;
-    alpha: Schema.Attribute.Decimal;
-    beta: Schema.Attribute.Decimal;
-    name: Schema.Attribute.String;
-    uuid: Schema.Attribute.String & Schema.Attribute.Unique;
+    mirrorX: Schema.Attribute.Boolean;
+    mirrorZ: Schema.Attribute.Boolean;
+    offsetX: Schema.Attribute.Decimal;
+    offsetY: Schema.Attribute.Decimal;
+    scale: Schema.Attribute.Decimal;
   };
 }
 
@@ -93,7 +90,7 @@ export interface SharedVector2 extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.hotspot': SharedHotspot;
+      'shared.map': SharedMap;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -34,6 +34,11 @@
       "relation": "oneToMany",
       "target": "api::scene.scene",
       "mappedBy": "project"
+    },
+    "mapTransform": {
+      "type": "component",
+      "component": "shared.map",
+      "repeatable": false
     }
   }
 }
