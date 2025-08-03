@@ -35,7 +35,7 @@
       "target": "api::scene.scene",
       "mappedBy": "project"
     },
-    "mapTransform": {
+    "map_transform": {
       "type": "component",
       "component": "shared.map",
       "repeatable": false

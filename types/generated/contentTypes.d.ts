@@ -599,7 +599,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
-    mapTransform: Schema.Attribute.Component<'shared.map', false>;
+    map_transform: Schema.Attribute.Component<'shared.map', false>;
     publishedAt: Schema.Attribute.DateTime;
     scenes: Schema.Attribute.Relation<'oneToMany', 'api::scene.scene'>;
     slug: Schema.Attribute.UID<'title'>;
